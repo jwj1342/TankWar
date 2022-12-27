@@ -20,6 +20,11 @@ import java.util.Map;
 
 public class TankApp extends GameApplication {
     private Entity player;
+
+    public Direction getDir() {
+        return dir;
+    }
+
     private Direction dir;
     private boolean isMoving;
     private LocalTimer shoot_timer;
@@ -56,7 +61,9 @@ public class TankApp extends GameApplication {
         //初始化射击间隔计时器
         shoot_timer = FXGL.newLocalTimer();
 
-        createEnemy();
+        for (int i = 0; i < 5; i++) {
+            createEnemy();
+        }
     }
 
     private void createEnemy() {
@@ -65,9 +72,10 @@ public class TankApp extends GameApplication {
                 .type(Collision.ENEMY)
                 //随机位置生成敌人
                 .at(FXGL.random(10, 500), FXGL.random(10, 500))
-                .viewWithBBox("tankD.gif")
+                .viewWithBBox("tankR.gif")
                 //给敌人加上可碰撞属性（别忘了给子弹也加上可碰撞）
                 .collidable()
+                .with(new TankEnemyComppnent())
                 .buildAndAttach();
     }
 
