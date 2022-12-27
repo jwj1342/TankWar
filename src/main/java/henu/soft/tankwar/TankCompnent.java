@@ -1,19 +1,33 @@
 package henu.soft.tankwar;
 
+import com.almasb.fxgl.core.util.LazyValue;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.dsl.components.OffscreenCleanComponent;
 import com.almasb.fxgl.dsl.components.ProjectileComponent;
 import com.almasb.fxgl.entity.Entity;
+import com.almasb.fxgl.entity.EntityGroup;
 import com.almasb.fxgl.entity.component.Component;
 import com.almasb.fxgl.time.LocalTimer;
 import javafx.geometry.Point2D;
 import javafx.util.Duration;
 
+import java.util.List;
+
 public class TankCompnent extends Component {
     private LocalTimer shoot_timer = FXGL.newLocalTimer();
     ;
     private boolean isMoving = false;
+
+    //使用动态距离，来定义每一帧移动多少
+    private double distence;
+
     private Direction dir = Direction.RIGHT;
+    private LazyValue<EntityGroup> entityGroupLazyValue
+            = new LazyValue<>(() -> FXGL.getGameWorld().getGroup(Collision.ENEMY, Collision.BRICK));
+
+    public Direction getDir() {
+        return dir;
+    }
 
     public void move_up() {
         if (isMoving) {
@@ -21,7 +35,8 @@ public class TankCompnent extends Component {
         }
         isMoving = true;
         entity.setRotation(270);
-        entity.translateY(-5);
+//        entity.translateY(-distence);
+        move();
         dir = Direction.UP;
     }
 
@@ -31,7 +46,8 @@ public class TankCompnent extends Component {
         }
         isMoving = true;
         entity.setRotation(90);
-        entity.translateY(5);
+//        entity.translateY(distence);
+        move();
         dir = Direction.DOWN;
     }
 
@@ -41,7 +57,8 @@ public class TankCompnent extends Component {
         }
         isMoving = true;
         entity.setRotation(180);
-        entity.translateX(-5);
+//        entity.translateX(-distence);
+        move();
         dir = Direction.LEFT;
     }
 
@@ -51,7 +68,8 @@ public class TankCompnent extends Component {
         }
         isMoving = true;
         entity.setRotation(0);
-        entity.translateX(5);
+        //entity.translateX(distence);
+        move();
         dir = Direction.RIGHT;
     }
 
@@ -86,5 +104,25 @@ public class TankCompnent extends Component {
     @Override
     public void onUpdate(double tpf) {
         isMoving = false;
+        distence = tpf * Config.TANK_SPEED;
+    }
+
+    public void move() {
+        int len = (int) distence;
+        List<Entity> blockList = entityGroupLazyValue.get().getEntitiesCopy();
+        boolean isCollision = false;
+        for (int i = 0; i < len; i++) {
+            entity.translate(dir.getVector().getX() * Config.SPEED_NOR, dir.getVector().getY() * Config.SPEED_NOR);
+            for (var j : blockList) {
+                if (entity.isColliding(j)) {
+                    isCollision = true;
+                    break;
+                }
+            }
+            if (isCollision) {
+                entity.translate(-dir.getVector().getX() * Config.SPEED_NOR, -dir.getVector().getY() * Config.SPEED_NOR);
+                break;
+            }
+        }
     }
 }

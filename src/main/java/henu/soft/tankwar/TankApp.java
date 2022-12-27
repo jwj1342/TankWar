@@ -32,6 +32,19 @@ public class TankApp extends GameApplication {
     protected void initGame() {
         FXGL.getGameWorld().addEntityFactory(new TankFactory());
         player = FXGL.spawn("player");
+        for (int i = 0; i < 800; i += 59) {
+            FXGL.spawn("bricks", i, 1);
+        }
+        for (int i = 0; i < 600; i += 59) {
+            FXGL.spawn("bricks", 1, i);
+        }
+        for (int i = 0; i < 800; i += 59) {
+            FXGL.spawn("bricks", i, 600 - 59);
+        }
+        for (int i = 0; i < 600; i += 59) {
+            FXGL.spawn("bricks", 800 - 59, i);
+        }
+
 
         for (int i = 0; i < 5; i++) {
             createEnemy();
@@ -39,16 +52,7 @@ public class TankApp extends GameApplication {
     }
 
     private void createEnemy() {
-        FXGL.entityBuilder()
-                //绑定枚举类型，为下面的子弹和敌人碰撞做准备
-                .type(Collision.ENEMY)
-                //随机位置生成敌人
-                .at(FXGL.random(10, 500), FXGL.random(10, 500))
-                .viewWithBBox("tankR.gif")
-                //给敌人加上可碰撞属性（别忘了给子弹也加上可碰撞）
-                .collidable()
-                .with(new TankEnemyComppnent())
-                .buildAndAttach();
+        FXGL.spawn("enemy");
     }
 
 
