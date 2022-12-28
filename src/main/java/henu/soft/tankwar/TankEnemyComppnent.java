@@ -1,8 +1,9 @@
 package henu.soft.tankwar;
 
 import com.almasb.fxgl.core.math.FXGLMath;
+import com.almasb.fxgl.entity.component.Component;
 
-public class TankEnemyComppnent extends TankCompnent {
+public class TankEnemyComppnent extends Component {
 
     Direction enemy_move_dir = Direction.UP;
     private TankCompnent tankCompnent;

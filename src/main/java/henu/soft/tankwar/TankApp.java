@@ -59,12 +59,11 @@ public class TankApp extends GameApplication {
     @Override
     protected void initUI() {
         Text text = FXGL.addVarText("Score", 20, 20);
-        //首先接触绑定，之后再设置相关的属性
+        //首先解除绑定，之后再设置相关的属性
         text.fontProperty().unbind();
         text.setFill(Color.RED);
 
         text.setFont(Font.font(25));
-//        FXGL.addUINode(text);
     }
 
     @Override
@@ -114,8 +113,6 @@ public class TankApp extends GameApplication {
 
     @Override
     protected void onUpdate(double tpf) {
-        //当每次移动的时侯都要将这个变量设置为false这样就可以让坦克移动起来
-        //
 
     }
 
