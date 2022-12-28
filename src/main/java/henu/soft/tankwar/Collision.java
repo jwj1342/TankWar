@@ -1,5 +1,5 @@
 package henu.soft.tankwar;
 
 public enum Collision {
-    ENEMY, BULLET, BRICK
+    ENEMY, BULLET, PLAYER, BRICK
 }

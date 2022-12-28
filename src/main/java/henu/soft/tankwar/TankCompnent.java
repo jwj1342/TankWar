@@ -30,7 +30,7 @@ public class TankCompnent extends Component {
 
     //下面这个懒值是用来记录可碰撞的实体名单，方便移动的时侯检测。
     private final LazyValue<EntityGroup> entityGroupLazyValue
-            = new LazyValue<>(() -> FXGL.getGameWorld().getGroup(Collision.ENEMY, Collision.BRICK));
+            = new LazyValue<>(() -> FXGL.getGameWorld().getGroup(Collision.ENEMY, Collision.BRICK,Collision.PLAYER));
 
 
     public void move_up() {
@@ -83,7 +83,8 @@ public class TankCompnent extends Component {
         //从工厂中抽出一个子弹试题，给两个参数，一个是发射子弹的方向，一个是子弹开始的位置
         FXGL.spawn("bullet",new SpawnData()
                 .put("dir",dir)
-                .put("pos",entity.getCenter()));
+                .put("pos",entity.getCenter())
+                .put("type",entity.getType()));
 
     }
 

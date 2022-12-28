@@ -4,6 +4,7 @@ import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
+import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.physics.CollisionHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
@@ -102,11 +103,13 @@ public class TankApp extends GameApplication {
         FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(Collision.ENEMY, Collision.BULLET) {
             @Override
             protected void onCollisionBegin(Entity enemy, Entity bullet) {
+                FXGL.spawn("boom",new SpawnData().put("pos",enemy.getCenter().subtract(32,32)));
+
                 enemy.removeFromWorld();
                 bullet.removeFromWorld();
                 //对该分数，每次消灭敌人都自增10
                 FXGL.inc("Score", +10);
-                createEnemy();
+                //createEnemy();
             }
         });
     }
