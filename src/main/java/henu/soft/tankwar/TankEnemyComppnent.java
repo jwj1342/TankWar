@@ -27,10 +27,5 @@ public class TankEnemyComppnent extends Component {
         if (FXGLMath.randomBoolean(0.05)){
             tankCompnent.shoot();
         }
-
-        //todo:解决敌人坦克的移动问题
-        //todo:解决敌人坦克的子弹发射问题
-        //todo:解决自己坦克的血量问题
-        //todo:解决最后游戏胜利问题
     }
 }

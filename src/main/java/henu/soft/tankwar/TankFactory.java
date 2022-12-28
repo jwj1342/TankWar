@@ -1,27 +1,41 @@
 package henu.soft.tankwar;
 
-import com.almasb.fxgl.animation.Animatable;
-import com.almasb.fxgl.animation.AnimatedColor;
-import com.almasb.fxgl.animation.AnimatedPath;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.dsl.components.ExpireCleanComponent;
+import com.almasb.fxgl.dsl.components.HealthIntComponent;
 import com.almasb.fxgl.dsl.components.OffscreenCleanComponent;
 import com.almasb.fxgl.dsl.components.ProjectileComponent;
-import com.almasb.fxgl.entity.*;
+import com.almasb.fxgl.entity.Entity;
+import com.almasb.fxgl.entity.EntityFactory;
+import com.almasb.fxgl.entity.SpawnData;
+import com.almasb.fxgl.entity.Spawns;
 import com.almasb.fxgl.entity.components.CollidableComponent;
 import com.almasb.fxgl.texture.AnimatedTexture;
 import com.almasb.fxgl.texture.AnimationChannel;
+import com.almasb.fxgl.ui.ProgressBar;
 import javafx.geometry.Point2D;
-import javafx.scene.shape.Shape;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class TankFactory implements EntityFactory {
     @Spawns("player")
     public Entity Player(SpawnData spawnData) {
+        //初始化生命
+        HealthIntComponent hp = new HealthIntComponent(5);
+        hp.setValue(5);
+        //初始化生命进度条,把进度条绑定到血量上面
+        ProgressBar bar = new ProgressBar();
+        bar.maxValueProperty().bind(hp.maxValueProperty());
+        bar.currentValueProperty().bind(hp.valueProperty());
+        bar.setWidth(34);
+        bar.setFill(Color.RED);
+
         Entity player = FXGL.entityBuilder(spawnData)
                 .type(Collision.PLAYER)
                 .at(200, 200)
                 .viewWithBBox("TankPlayer.png")
+                .with(hp)
+                .view(bar)
                 .with(new TankCompnent())
                 .with(new CollidableComponent(true))
                 .build();

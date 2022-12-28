@@ -1,0 +1,92 @@
+17:56:58.755 [main                     ] DEBUG Logger               - Configured Logger
+17:56:58.771 [main                     ] DEBUG GameApplication      - Logging settings
+Title: TankWar
+Version: 1.0
+Width: 800
+Height: 600
+Fullscreen: false
+Intro: false
+Profiling: false
+Single step:false
+App Mode: DEVELOPER
+Menu Key: ESCAPE
+Stage Style: DECORATED
+Scene Factory: class henu.soft.tankwar.TankApp$1
+
+17:56:59.116 [JavaFX Application Thread] DEBUG FXGLApplication      - Initializing FXGL
+17:56:59.120 [JavaFX Application Thread] INFO  Engine               - FXGL-17.1 (24.03.2022 17.34) on WINDOWS (J:18.0.2.1 FX:18.0.2)
+17:56:59.120 [JavaFX Application Thread] DEBUG Engine               - JRE Vendor Name: Oracle Corporation
+17:56:59.120 [JavaFX Application Thread] DEBUG Engine               - Running on OS: Windows 10 version 10.0
+17:56:59.120 [JavaFX Application Thread] DEBUG Engine               - Architecture: amd64
+17:56:59.121 [JavaFX Application Thread] INFO  Engine               - Source code and latest versions at: https://github.com/AlmasB/FXGL
+17:56:59.121 [JavaFX Application Thread] INFO  Engine               -       Ask questions and discuss at: https://github.com/AlmasB/FXGL/discussions
+17:56:59.121 [JavaFX Application Thread] INFO  Engine               -              Join the FXGL chat at: https://gitter.im/AlmasB/FXGL
+17:56:59.179 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Creating a JavaFX scene
+17:56:59.209 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Target settings size: 800.0 x 600.0
+17:56:59.209 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled scene size:    800.0 x 600.0
+17:56:59.209 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled ratio: (1.0, 1.0)
+17:56:59.210 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Set initial scene to FXGLStartupScene
+17:56:59.215 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Opening main window
+17:56:59.276 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Window border size: (14.4000244140625, 37.5999755859375)
+17:56:59.276 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled size: 800.0 x 600.0
+17:56:59.276 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scaled ratio: (1.0, 1.0)
+17:56:59.276 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Scene size: 800.0 x 600.0
+17:56:59.276 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Stage size: 814.4000244140625 x 637.5999755859375
+17:56:59.281 [FXGL Background Thread 1 ] DEBUG Engine               - Initializing environment variables
+17:56:59.312 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - User app class for loading assets: class henu.soft.tankwar.TankApp
+17:56:59.312 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Applying CSS: fxgl_dark.css
+17:56:59.312 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/lenovo/.m2/repository/com/github/almasb/fxgl/17.1/fxgl-17.1.jar!/fxglassets/ui/css/fxgl_dark.css
+17:56:59.341 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Initializing application scenes
+17:56:59.395 [FXGL Background Thread 1 ] DEBUG GameWorld            - Game world initialized
+17:56:59.433 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Physics world initialized: appHeight=600, physics.ppm=50.0
+17:56:59.433 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Using strategy: BRUTE_FORCE
+17:56:59.435 [FXGL Background Thread 1 ] DEBUG GameScene            - Game scene initialized: 800x600
+17:56:59.442 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createMenuBodyMainMenu()
+17:56:59.451 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createOptionsMenu()
+17:56:59.457 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/lenovo/.m2/repository/com/github/almasb/fxgl/17.1/fxgl-17.1.jar!/fxglassets/textures/particles/smoke.png
+17:56:59.516 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/lenovo/.m2/repository/com/github/almasb/fxgl/17.1/fxgl-17.1.jar!/fxglassets/textures/particles/trace_horizontal.png
+17:56:59.538 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createMenuBodyGameMenu()
+17:56:59.539 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createOptionsMenu()
+17:56:59.549 [FXGL Background Thread 1 ] DEBUG GameApplicationServi - Application scenes initialized
+17:56:59.557 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Loading FXGL system data
+17:56:59.560 [FXGL Background Thread 1 ] DEBUG FileSystemAccess     - Reading from: G:\code file\2022\2022.12\java\TankWar\system\fxgl.bundle
+17:56:59.565 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Bundle FXGL: {}
+17:56:59.566 [FXGL Background Thread 1 ] DEBUG UpdaterService       - Checking for updates
+17:56:59.568 [FXGL Background Thread 4 ] DEBUG FXGLApplication      - Loading fonts
+17:56:59.568 [FXGL Background Thread 1 ] DEBUG FXGLApplication      - Loading default localization
+17:56:59.568 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/lenovo/.m2/repository/com/github/almasb/fxgl/17.1/fxgl-17.1.jar!/fxglassets/ui/fonts/VarelaRound-Regular.ttf
+17:56:59.569 [FXGL Background Thread 1 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/lenovo/.m2/repository/com/github/almasb/fxgl/17.1/fxgl-17.1.jar!/fxglassets/languages/english.lang
+17:56:59.578 [FXGL Background Thread 1 ] INFO  FXGLApplication      - FXGL initialization took: 0.297 sec
+17:56:59.584 [JavaFX Application Thread] DEBUG Input                - Registered new binding: action0 - D
+17:56:59.585 [JavaFX Application Thread] DEBUG Input                - Registered new binding: action1 - A
+17:56:59.585 [JavaFX Application Thread] DEBUG Input                - Registered new binding: action2 - W
+17:56:59.585 [JavaFX Application Thread] DEBUG Input                - Registered new binding: action3 - S
+17:56:59.585 [JavaFX Application Thread] DEBUG Input                - Registered new binding: action4 - Space
+17:56:59.586 [JavaFX Application Thread] WARN  FXGLAssetLoaderServi - Asset "/assets/textures/10.gif" was not found!
+17:56:59.586 [JavaFX Application Thread] WARN  FXGLAssetLoaderServi - Failed to load IMAGE
+17:56:59.591 [JavaFX Application Thread] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/lenovo/.m2/repository/com/github/almasb/fxgl/17.1/fxgl-17.1.jar!/fxglassets/textures/fxgl_default_cursor.png
+17:56:59.592 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Screenshot - CTRL+8
+17:56:59.593 [JavaFX Application Thread] DEBUG Input                - Registered new binding: System info dump - CTRL+9
+17:56:59.593 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Restart - CTRL+R
+17:56:59.593 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Toggle Debug Camera - CTRL+7
+17:56:59.595 [JavaFX Application Thread] DEBUG LoopRunner           - Starting loop
+17:56:59.595 [JavaFX Application Thread] DEBUG LoopRunner           - Initializing JavaFX AnimationTimerLoop
+17:56:59.596 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:56:59.601 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from FXGLStartupScene and adding to FXGLMainMenuDummyScene
+17:56:59.602 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLStartupScene -> FXGLMainMenuDummyScene
+17:56:59.602 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Push state: FXGLDefaultMenu
+17:56:59.605 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+17:56:59.610 [JavaFX Application Thread] DEBUG GameApplicationServi - Removing overlay from FXGLMainMenuDummyScene and adding to FXGLDefaultMenu
+17:56:59.610 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - FXGLMainMenuDummyScene -> FXGLDefaultMenu
+17:56:59.647 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/lenovo/.m2/repository/com/github/almasb/fxgl/17.1/fxgl-17.1.jar!/fxglassets/ui/fonts/Abel-Regular.ttf
+17:56:59.653 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/lenovo/.m2/repository/com/github/almasb/fxgl/17.1/fxgl-17.1.jar!/fxglassets/ui/fonts/TerminalLandMono-Regular.otf
+17:56:59.660 [FXGL Background Thread 4 ] DEBUG FXGLAssetLoaderServi - Loading from file system: jar:file:///C:/Users/lenovo/.m2/repository/com/github/almasb/fxgl/17.1/fxgl-17.1.jar!/fxglassets/ui/fonts/Courier-Prime.ttf
+17:56:59.708 [JavaFX Application Thread] DEBUG FXGLApplication      - Registering font factories with UI factory
+17:56:59.747 [FXGL Background Thread 2 ] WARN  UpdaterService       - Failed to find updates: javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+17:57:02.021 [JavaFX Application Thread] DEBUG FXGLApplication      - Exiting FXGL
+17:57:02.022 [JavaFX Application Thread] DEBUG LoopRunner           - Stopping loop
+17:57:02.022 [JavaFX Application Thread] DEBUG SystemBundleService  - Saving FXGL system data
+17:57:02.023 [JavaFX Application Thread] DEBUG FileSystemAccess     - Writing to: G:\code file\2022\2022.12\java\TankWar\system\fxgl.bundle
+17:57:02.024 [JavaFX Application Thread] DEBUG Async                - Shutting down background threads
+17:57:02.024 [JavaFX Application Thread] DEBUG PrimaryStageWindow   - Closing main window
+17:57:02.032 [JavaFX Application Thread] DEBUG Logger               - Closing Logger
