@@ -1,6 +1,6 @@
 # TankWar
 
-<img src="README_PIC/2.PNG" alt="游戏过程中" style="zoom: 33%;" />
+<img src="README_PIC/2.png" alt="游戏过程中" style="zoom: 33%;" />
 
 [toc]
 
@@ -15,7 +15,7 @@
 
 <img src="README_PIC/1.png" alt="游戏主页面" style="zoom: 50%;" />
 
-<img src="README_PIC/2.PNG" alt="游戏过程中" style="zoom:50%;" />
+<img src="README_PIC/2.png" alt="游戏过程中" style="zoom:50%;" />
 
 <img src="README_PIC/3.png" alt="游戏胜利" style="zoom:50%;" />
 
