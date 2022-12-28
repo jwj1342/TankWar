@@ -1,8 +1,9 @@
 package henu.soft.tankwar;
 
 import com.almasb.fxgl.core.math.FXGLMath;
+import com.almasb.fxgl.entity.component.Component;
 
-public class TankEnemyComppnent extends TankCompnent {
+public class TankEnemyComppnent extends Component {
 
     Direction enemy_move_dir = Direction.UP;
     private TankCompnent tankCompnent;
@@ -23,7 +24,10 @@ public class TankEnemyComppnent extends TankCompnent {
 
             }
         }
-        //todo:需要解决的问题
+        if (FXGLMath.randomBoolean(0.05)){
+            tankCompnent.shoot();
+        }
+
         //todo:解决敌人坦克的移动问题
         //todo:解决敌人坦克的子弹发射问题
         //todo:解决自己坦克的血量问题

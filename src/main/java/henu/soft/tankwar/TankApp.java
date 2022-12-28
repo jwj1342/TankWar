@@ -4,6 +4,7 @@ import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
+import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.physics.CollisionHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
@@ -59,12 +60,11 @@ public class TankApp extends GameApplication {
     @Override
     protected void initUI() {
         Text text = FXGL.addVarText("Score", 20, 20);
-        //首先接触绑定，之后再设置相关的属性
+        //首先解除绑定，之后再设置相关的属性
         text.fontProperty().unbind();
         text.setFill(Color.RED);
 
         text.setFont(Font.font(25));
-//        FXGL.addUINode(text);
     }
 
     @Override
@@ -103,19 +103,19 @@ public class TankApp extends GameApplication {
         FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(Collision.ENEMY, Collision.BULLET) {
             @Override
             protected void onCollisionBegin(Entity enemy, Entity bullet) {
+                FXGL.spawn("boom",new SpawnData().put("pos",enemy.getCenter().subtract(32,32)));
+
                 enemy.removeFromWorld();
                 bullet.removeFromWorld();
                 //对该分数，每次消灭敌人都自增10
                 FXGL.inc("Score", +10);
-                createEnemy();
+                //createEnemy();
             }
         });
     }
 
     @Override
     protected void onUpdate(double tpf) {
-        //当每次移动的时侯都要将这个变量设置为false这样就可以让坦克移动起来
-        //
 
     }
 
