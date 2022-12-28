@@ -77,7 +77,7 @@ public class TankApp extends GameApplication {
         gameSettings.setMainMenuEnabled(true);
         gameSettings.setHeight(600);
         gameSettings.setWidth(800);
-        gameSettings.setAppIcon("10.gif");
+        gameSettings.setAppIcon("Tank_player.png");
         gameSettings.setTitle("TankWar");
         gameSettings.setVersion("1.0");
 
