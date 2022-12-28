@@ -41,9 +41,8 @@ public class TankFactory implements EntityFactory {
                 .at(FXGL.random(49, 800 - 60), FXGL.random(49, 600 - 60))
                 .viewWithBBox("tankR.gif")
                 .with(new TankCompnent())
-                .with(new TankEnemyComppnent())
-                .with(new CollidableComponent(true))
                 .collidable()
+                .with(new TankEnemyComppnent())
                 .build();
         enemy.setRotationOrigin(new Point2D(25, 25));//设置旋转的中心点
         return enemy;

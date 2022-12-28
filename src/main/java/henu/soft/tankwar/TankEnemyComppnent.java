@@ -1,11 +1,12 @@
 package henu.soft.tankwar;
 
 import com.almasb.fxgl.core.math.FXGLMath;
-import com.almasb.fxgl.entity.component.Component;
 
-public class TankEnemyComppnent extends Component {
+public class TankEnemyComppnent extends TankCompnent {
+
     Direction enemy_move_dir = Direction.UP;
     private TankCompnent tankCompnent;
+
     @Override
     public void onUpdate(double tpf) {
         enemy_move_dir = tankCompnent.getDir();
@@ -18,9 +19,9 @@ public class TankEnemyComppnent extends Component {
             case LEFT -> tankCompnent.move_left();
             case UP -> tankCompnent.move_up();
             case DOWN -> tankCompnent.move_down();
-            /*default -> {
+            default -> {
 
-            }*/
+            }
         }
         //todo:需要解决的问题
         //todo:解决敌人坦克的移动问题

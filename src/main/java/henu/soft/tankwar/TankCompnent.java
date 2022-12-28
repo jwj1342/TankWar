@@ -18,16 +18,18 @@ public class TankCompnent extends Component {
     ;
     private boolean isMoving = false;
 
+
     //使用动态距离，来定义每一帧移动多少
     private double distence;
+
+    public Direction getDir() {
+        return dir;
+    }
 
     private Direction dir = Direction.RIGHT;
     private LazyValue<EntityGroup> entityGroupLazyValue
             = new LazyValue<>(() -> FXGL.getGameWorld().getGroup(Collision.ENEMY, Collision.BRICK));
 
-    public Direction getDir() {
-        return dir;
-    }
 
     public void move_up() {
         if (isMoving) {
@@ -112,15 +114,16 @@ public class TankCompnent extends Component {
         List<Entity> blockList = entityGroupLazyValue.get().getEntitiesCopy();
         boolean isCollision = false;
         for (int i = 0; i < len; i++) {
-            entity.translate(dir.getVector().getX() * Config.SPEED_NOR, dir.getVector().getY() * Config.SPEED_NOR);
+            entity.translate(dir.getVector().getX() * len /*Config.SPEED_NOR*/, dir.getVector().getY() * len/*Config.SPEED_NOR*/);
+            System.out.println("finish");
             for (var j : blockList) {
-                if (entity.isColliding(j)) {
+                if (entity.isColliding(j) && j != entity) {
                     isCollision = true;
                     break;
                 }
             }
             if (isCollision) {
-                entity.translate(-dir.getVector().getX() * Config.SPEED_NOR, -dir.getVector().getY() * Config.SPEED_NOR);
+                entity.translate(-dir.getVector().getX() * len/*Config.SPEED_NOR*/, -dir.getVector().getY() * len/*Config.SPEED_NOR*/);
                 break;
             }
         }
